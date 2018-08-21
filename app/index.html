@@ -1,29 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Game</title>
-    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.min.js"></script>
+    <meta charset="UTF-8" />
+    <title>Making your first Phaser 3 Game - Part 10</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
     <script src="js/game.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-<script>
+
+<script type="text/javascript">
+
+    var gravity = 1500;
+    var jumpPower = -800;
+
     var config = {
-        type: Phaser.CANVAS,
+        type: Phaser.AUTO,
         width: 800,
         height: 600,
         physics: {
             default: 'arcade',
             arcade: {
-                gravity: {y: 200}
+                gravity: { y: gravity },
+                debug: false
             }
         },
         scene: {
             preload: preload,
-            create: create
+            create: create,
+            update: update
         }
     };
     var game = new Phaser.Game(config);
+
 </script>
+
 </body>
 </html>
