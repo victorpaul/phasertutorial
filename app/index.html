@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Making your first Phaser 3 Game - Part 10</title>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <script src="socket.io/socket.io.js"></script>
     <script src="js/game.js"></script>
+
     <style type="text/css">
         body {
             margin: 0;
@@ -15,17 +17,21 @@
 
 <script type="text/javascript">
 
+    var ioServer = document.location.protocol + "//" + document.location.host;
+    var socket = io.connect(ioServer);
+    console.log('connect to ' + ioServer)
+
     var gravity = 1500;
     var jumpPower = -800;
 
     var config = {
-        type: Phaser.AUTO,
+        type: Phaser.CANVAS,
         width: 800,
         height: 600,
         physics: {
             default: 'arcade',
             arcade: {
-                gravity: { y: gravity },
+                gravity: {y: gravity},
                 debug: false
             }
         },
