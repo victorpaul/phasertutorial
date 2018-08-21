@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js port=80",
     "game": "node app.js"
   },
   "author": "victorpaul",

@@ -1,5 +1,5 @@
 const portPattern = /^port=(\d+)$/;
-var port = 80;
+var port = 8080;
 
 process.argv.forEach(function (val, index, array) {
     console.log(index + ': ' + val);
