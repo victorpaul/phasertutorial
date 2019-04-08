@@ -1,4 +1,4 @@
-var playerId
+var playerId;
 var player;
 var onlinePlayers;
 
